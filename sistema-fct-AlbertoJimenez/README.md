@@ -66,19 +66,15 @@ Este archivo crea la estructura de la base de datos. Contiene las tablas necesar
 - **Empresa**: Empresas colaboradoras
 - **Competencia**: Lista de competencias evaluables
 
-**Para explicar a alguien:** "Este archivo es como el plano de una casa. Define qué habitaciones (tablas) tendrá la base de datos y qué muebles (campos) irán en cada una."
-
 #### datos_iniciales.sql
 Inserta los datos básicos que el sistema necesita para funcionar:
 - Competencias predefinidas para DAW
 - Usuario coordinador por defecto
 
-**Para explicar:** "Es como amueblar la casa básica. Pone lo mínimo necesario para que se pueda vivir en ella."
 
 #### datos_pruebas.sql
 Añade usuarios y empresas de ejemplo para hacer pruebas.
 
-**Para explicar:** "Son datos de mentira para probar que todo funciona bien antes de usar datos reales."
 
 ---
 
@@ -90,14 +86,10 @@ Contiene todas las constantes del sistema:
 - Configuración de seguridad (intentos de login, tiempo de bloqueo)
 - Rutas de archivos
 
-**Para explicar:** "Es como el panel de control de la casa. Aquí se configuran todas las opciones importantes: la contraseña del WiFi, el código de la alarma, etc."
-
 #### Database.php
 Clase que gestiona la conexión a la base de datos usando el patrón **Singleton**.
 
 **¿Qué es Singleton?** Es un patrón de diseño que asegura que solo exista UNA conexión a la base de datos en toda la aplicación. Esto ahorra recursos.
-
-**Para explicar:** "Imagina que la base de datos es una fuente de agua. En lugar de que cada grifo tenga su propia tubería directa (desperdicio), todos los grifos comparten una única tubería central."
 
 ---
 
@@ -114,7 +106,6 @@ Esta clase contiene toda la **lógica de negocio** relacionada con usuarios:
 
 **¿Qué es la lógica de negocio?** Son las reglas del sistema. Por ejemplo: "la contraseña debe tener 8 caracteres", "después de 5 intentos se bloquea la cuenta".
 
-**Para explicar:** "Es el cerebro del sistema. Aquí están todas las reglas: qué se puede hacer, qué no, cómo se hace. Como un reglamento."
 
 ---
 
@@ -127,8 +118,6 @@ Recibe las peticiones del usuario y decide qué hacer:
 2. Los valida (¿están todos los campos?, ¿el email es válido?)
 3. Llama al modelo para procesar la operación
 4. Redirige a la vista correspondiente
-
-**Para explicar:** "Es como un recepcionista. Recibe al visitante (la petición), le pregunta qué necesita, gestiona su solicitud con el departamento correspondiente (modelo) y le indica dónde ir después (vista)."
 
 ---
 
@@ -152,11 +141,10 @@ Formulario para crear cuenta con:
 #### dashboard.php
 Página principal tras iniciar sesión. Muestra un mensaje de bienvenida.
 
-**Para explicar:** "Son las pantallas que ve el usuario. Como la fachada y el interior decorado de la casa."
 
 ---
 
-### 6. CSS y JavaScript
+### 6. CSS 
 
 #### css/styles.css
 Todos los estilos visuales:
@@ -164,15 +152,6 @@ Todos los estilos visuales:
 - Tamaños de letra
 - Espaciados
 - Diseño de botones, formularios, alertas
-
-**Para explicar:** "Es la decoración de la casa: pintura, muebles, cortinas. Hace que todo se vea bonito."
-
-#### js/registro.js
-JavaScript que:
-- Muestra/oculta campos según el rol seleccionado
-- Valida que las contraseñas coincidan
-
-**Para explicar:** "Son las funciones automáticas de la casa: cuando pulsas el interruptor se enciende la luz, cuando abres el grifo sale agua."
 
 ---
 
@@ -192,8 +171,6 @@ El proyecto sigue el patrón **Modelo-Vista-Controlador**:
 4. El Controlador decide qué **Vista** mostrar
 5. La Vista se muestra al usuario
 
-**Para explicar:** "Es como un restaurante. El cliente (usuario) hace un pedido al camarero (controlador), el camarero lo pasa a la cocina (modelo), la cocina prepara el plato con los ingredientes del almacén (base de datos) y el camarero sirve el plato en un plato bonito (vista)."
-
 ---
 
 ## Seguridad Implementada
@@ -201,22 +178,14 @@ El proyecto sigue el patrón **Modelo-Vista-Controlador**:
 ### 1. Contraseñas Hasheadas
 Las contraseñas nunca se guardan en texto plano. Se usa `password_hash()` de PHP que aplica el algoritmo BCrypt.
 
-**Para explicar:** "Es como guardar una huella dactilar en lugar del dedo. Aunque alguien robe la base de datos, no puede saber las contraseñas originales."
-
 ### 2. Prepared Statements
 Todas las consultas SQL usan prepared statements de PDO para evitar inyección SQL.
-
-**Para explicar:** "Es como un formulario oficial donde solo puedes escribir en las casillas. Aunque intentes escribir algo malicioso, el sistema lo trata como texto normal, no como una orden."
 
 ### 3. Bloqueo por Intentos Fallidos
 Después de 5 intentos incorrectos, la cuenta se bloquea 15 minutos.
 
-**Para explicar:** "Es como cuando metes mal el PIN del móvil varias veces y te bloquea. Evita que alguien pruebe miles de contraseñas."
-
 ### 4. Mensajes Genéricos
 El mensaje de error siempre dice "Credenciales inválidas", nunca especifica si el email existe o si la contraseña es incorrecta.
-
-**Para explicar:** "Si un ladrón intenta entrar y le dices 'esa llave no es', sabe que la cerradura es la correcta. Mejor decir simplemente 'no puedes entrar'."
 
 ---
 
@@ -298,8 +267,6 @@ El mensaje de error siempre dice "Credenciales inválidas", nunca especifica si 
 
 - **Sprint 2**: Fichas de seguimiento diario, validación por tutores
 - **Sprint 3**: Control de horas, gestión de incidencias
-- **Sprint 4**: Evaluaciones, dashboard con estadísticas
-
 
 **Alberto Jiménez Hernández**  
 IES Castelar - Badajoz  
