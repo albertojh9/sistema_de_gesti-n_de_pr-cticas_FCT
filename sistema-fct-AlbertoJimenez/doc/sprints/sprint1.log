@@ -1,0 +1,110 @@
+# Sprint 1 - Log de Desarrollo
+
+**Proyecto:** Sistema de Gestión de Prácticas FCT  
+**Autor:** Alberto Jiménez Hernández  
+**Fecha inicio:** Noviembre 2025  
+**Fecha fin:** Noviembre 2025
+
+---
+
+## Objetivo del Sprint
+
+Implementar el sistema de autenticación completo que permita a los usuarios registrarse en la plataforma e iniciar sesión de forma segura.
+
+---
+
+## Historias de Usuario Implementadas
+
+### HU-01: Registro de Usuarios
+
+**Como** usuario del sistema  
+**Quiero** poder registrarme con mis datos personales  
+**Para** tener acceso al sistema según mi rol
+
+**Criterios de Aceptación Implementados:**
+- ✅ Formulario de registro con campos: nombre, email, teléfono, contraseña
+- ✅ Selector de rol (Estudiante, Tutor de Empresa, Coordinador)
+- ✅ Campos dinámicos según el rol seleccionado
+- ✅ Validación de email único en el sistema
+- ✅ Validación de contraseña (mínimo 8 caracteres, mayúscula, minúscula, número)
+- ✅ Confirmación de contraseña
+- ✅ Almacenamiento seguro de contraseña (password_hash con BCrypt)
+- ✅ Mensajes de error claros y específicos
+- ✅ Redirección al login tras registro exitoso
+
+---
+
+### HU-02: Inicio de Sesión
+
+**Como** usuario registrado  
+**Quiero** poder iniciar sesión con mi correo y contraseña  
+**Para** acceder a las funcionalidades según mi rol
+
+**Criterios de Aceptación Implementados:**
+- ✅ Formulario de login con email y contraseña
+- ✅ Validación de credenciales contra la base de datos
+- ✅ Verificación de usuario activo
+- ✅ Bloqueo temporal tras 5 intentos fallidos (15 minutos)
+- ✅ Mensaje genérico "Credenciales inválidas" por seguridad
+- ✅ Creación de sesión con datos del usuario
+- ✅ Registro de último acceso
+- ✅ Redirección al dashboard según rol
+- ✅ Enlace a página de registro
+
+---
+
+## Archivos Creados
+
+### Base de Datos
+- `src/sql/bbdd.sql` - Estructura de la base de datos
+- `src/sql/datos_iniciales.sql` - Datos iniciales del sistema
+- `src/sql/datos_pruebas.sql` - Datos para testing
+
+### Backend (PHP)
+- `src/www/includes/config.php` - Configuración del sistema
+- `src/www/includes/Database.php` - Clase de conexión (Singleton)
+- `src/www/modelos/Usuario.php` - Modelo con lógica de negocio
+- `src/www/controladores/AuthController.php` - Controlador de autenticación
+- `src/www/index.php` - Punto de entrada
+
+### Frontend
+- `src/www/vistas/login.php` - Vista de inicio de sesión
+- `src/www/vistas/registro.php` - Vista de registro
+- `src/www/vistas/dashboard.php` - Dashboard principal
+- `src/www/css/styles.css` - Estilos CSS
+- `src/www/js/registro.js` - JavaScript del formulario
+
+---
+
+## Tecnologías Utilizadas
+
+- **Backend:** PHP 8.x
+- **Base de datos:** MySQL/MariaDB
+- **Frontend:** HTML5, CSS3, JavaScript vanilla
+- **Arquitectura:** MVC (Modelo-Vista-Controlador)
+- **Seguridad:** PDO con prepared statements, password_hash
+
+---
+
+## Pruebas Realizadas
+
+1. **Registro de estudiante:** OK
+2. **Registro de tutor de empresa:** OK
+3. **Registro de coordinador:** OK
+4. **Login con credenciales correctas:** OK
+5. **Login con credenciales incorrectas:** OK
+6. **Bloqueo tras 5 intentos fallidos:** OK
+7. **Validación de contraseña débil:** OK
+8. **Email duplicado:** OK
+9. **Cierre de sesión:** OK
+
+---
+
+## Notas del Sprint
+
+- Se implementó el patrón Singleton para la conexión a base de datos
+- Las contraseñas se almacenan con BCrypt (password_hash de PHP)
+- Se protege contra inyección SQL usando PDO con prepared statements
+- Los mensajes de error son genéricos para no dar pistas a atacantes
+- El sistema de bloqueo temporal previene ataques de fuerza bruta
+# Sprint 1 completado

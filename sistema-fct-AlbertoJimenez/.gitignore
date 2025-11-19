@@ -1,0 +1,24 @@
+# Archivos de configuración local
+src/www/includes/config.local.php
+
+# Logs
+*.log
+!doc/sprints/*.log
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-*
+
+# Dependencias (si se usan en el futuro)
+vendor/
+node_modules/
+
+# Archivos temporales
+*.tmp
+*.temp
+*.swp

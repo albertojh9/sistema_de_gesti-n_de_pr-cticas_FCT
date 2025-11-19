@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Estilo - Sistema FCT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #F3F4F6;
+            padding: 40px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #1F2937;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #6B7280;
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            color: #1F2937;
+            margin: 30px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #E5E7EB;
+        }
+        
+        /* Paleta de colores */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .color-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .color-preview {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .color-info {
+            padding: 15px;
+        }
+        
+        .color-name {
+            font-weight: 600;
+            color: #1F2937;
+            margin-bottom: 5px;
+        }
+        
+        .color-hex {
+            font-family: monospace;
+            color: #6B7280;
+            font-size: 14px;
+        }
+        
+        .color-use {
+            font-size: 12px;
+            color: #9CA3AF;
+            margin-top: 8px;
+        }
+        
+        /* Colores específicos */
+        .primary { background: #2563EB; }
+        .primary-dark { background: #1D4ED8; }
+        .primary-light { background: #DBEAFE; color: #1D4ED8; }
+        .secondary { background: #10B981; }
+        .accent { background: #F59E0B; }
+        .danger { background: #EF4444; }
+        .dark { background: #1F2937; }
+        .gray { background: #6B7280; }
+        .light { background: #F3F4F6; color: #1F2937; }
+        .white { background: #FFFFFF; color: #1F2937; border: 1px solid #E5E7EB; }
+        
+        /* Tipografía */
+        .typography-section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .font-example {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        
+        .font-example:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .font-label {
+            font-size: 12px;
+            color: #6B7280;
+            margin-bottom: 5px;
+        }
+        
+        .h1-example { font-size: 1.75rem; color: #1F2937; }
+        .h2-example { font-size: 1.5rem; color: #1F2937; }
+        .body-example { font-size: 1rem; color: #1F2937; }
+        .small-example { font-size: 0.875rem; color: #6B7280; }
+        
+        /* Componentes */
+        .components-section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .component-group {
+            margin-bottom: 30px;
+        }
+        
+        .component-group h3 {
+            color: #1F2937;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .btn-primary { background: #2563EB; color: white; }
+        .btn-secondary { background: #F3F4F6; color: #1F2937; }
+        .btn-danger { background: #EF4444; color: white; }
+        .btn-success { background: #10B981; color: white; }
+        
+        .form-control {
+            width: 100%;
+            max-width: 300px;
+            padding: 12px 16px;
+            border: 2px solid #F3F4F6;
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+        
+        .alert {
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            max-width: 400px;
+        }
+        
+        .alert-success {
+            background: #D1FAE5;
+            color: #059669;
+            border: 1px solid #10B981;
+        }
+        
+        .alert-danger {
+            background: #FEE2E2;
+            color: #EF4444;
+            border: 1px solid #EF4444;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .badge-primary {
+            background: #DBEAFE;
+            color: #2563EB;
+        }
+        
+        .badge-success {
+            background: #D1FAE5;
+            color: #059669;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #6B7280;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Guía de Estilo</h1>
+        <p class="subtitle">Sistema de Gestión de Prácticas FCT - Alberto Jiménez Hernández</p>
+        
+        <h2>Paleta de Colores</h2>
+        <div class="color-grid">
+            <div class="color-card">
+                <div class="color-preview primary">#2563EB</div>
+                <div class="color-info">
+                    <div class="color-name">Primary</div>
+                    <div class="color-hex">#2563EB</div>
+                    <div class="color-use">Botones principales, enlaces, acentos</div>
+                </div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-preview primary-dark">#1D4ED8</div>
+                <div class="color-info">
+                    <div class="color-name">Primary Dark</div>
+                    <div class="color-hex">#1D4ED8</div>
+                    <div class="color-use">Hover en botones, navbar</div>
+                </div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-preview primary-light">#DBEAFE</div>
+                <div class="color-info">
+                    <div class="color-name">Primary Light</div>
+                    <div class="color-hex">#DBEAFE</div>
+                    <div class="color-use">Fondos destacados, badges</div>
+                </div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-preview secondary">#10B981</div>
+                <div class="color-info">
+                    <div class="color-name">Secondary (Success)</div>
+                    <div class="color-hex">#10B981</div>
+                    <div class="color-use">Éxito, validaciones correctas</div>
+                </div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-preview accent">#F59E0B</div>
+                <div class="color-info">
+                    <div class="color-name">Accent (Warning)</div>
+                    <div class="color-hex">#F59E0B</div>
+                    <div class="color-use">Alertas, elementos destacados</div>
+                </div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-preview danger">#EF4444</div>
+                <div class="color-info">
+                    <div class="color-name">Danger</div>
+                    <div class="color-hex">#EF4444</div>
+                    <div class="color-use">Errores, acciones destructivas</div>
+                </div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-preview dark">#1F2937</div>
+                <div class="color-info">
+                    <div class="color-name">Dark</div>
+                    <div class="color-hex">#1F2937</div>
+                    <div class="color-use">Texto principal, títulos</div>
+                </div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-preview gray">#6B7280</div>
+                <div class="color-info">
+                    <div class="color-name">Gray</div>
+                    <div class="color-hex">#6B7280</div>
+                    <div class="color-use">Texto secundario, placeholders</div>
+                </div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-preview light">#F3F4F6</div>
+                <div class="color-info">
+                    <div class="color-name">Light</div>
+                    <div class="color-hex">#F3F4F6</div>
+                    <div class="color-use">Fondos, bordes de inputs</div>
+                </div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-preview white">#FFFFFF</div>
+                <div class="color-info">
+                    <div class="color-name">White</div>
+                    <div class="color-hex">#FFFFFF</div>
+                    <div class="color-use">Fondos de tarjetas, inputs</div>
+                </div>
+            </div>
+        </div>
+        
+        <h2>Tipografía</h2>
+        <div class="typography-section">
+            <div class="font-example">
+                <div class="font-label">Fuente principal: Segoe UI, Tahoma, sans-serif</div>
+            </div>
+            <div class="font-example">
+                <div class="font-label">Título H1 - 1.75rem (28px)</div>
+                <div class="h1-example">Sistema de Gestión FCT</div>
+            </div>
+            <div class="font-example">
+                <div class="font-label">Título H2 - 1.5rem (24px)</div>
+                <div class="h2-example">Inicio de Sesión</div>
+            </div>
+            <div class="font-example">
+                <div class="font-label">Texto normal - 1rem (16px)</div>
+                <div class="body-example">Este es un ejemplo de texto normal usado en párrafos y contenido general.</div>
+            </div>
+            <div class="font-example">
+                <div class="font-label">Texto pequeño - 0.875rem (14px)</div>
+                <div class="small-example">Texto secundario, etiquetas de formulario, ayudas contextuales.</div>
+            </div>
+        </div>
+        
+        <h2>Componentes</h2>
+        <div class="components-section">
+            <div class="component-group">
+                <h3>Botones</h3>
+                <button class="btn btn-primary">Primario</button>
+                <button class="btn btn-secondary">Secundario</button>
+                <button class="btn btn-success">Éxito</button>
+                <button class="btn btn-danger">Peligro</button>
+            </div>
+            
+            <div class="component-group">
+                <h3>Campos de formulario</h3>
+                <input type="text" class="form-control" placeholder="Campo de texto">
+                <input type="email" class="form-control" placeholder="correo@ejemplo.com">
+            </div>
+            
+            <div class="component-group">
+                <h3>Alertas</h3>
+                <div class="alert alert-success">¡Registro exitoso! Ya puedes iniciar sesión.</div>
+                <div class="alert alert-danger">Error: Las credenciales son inválidas.</div>
+            </div>
+            
+            <div class="component-group">
+                <h3>Badges</h3>
+                <span class="badge badge-primary">Estudiante</span>
+                <span class="badge badge-success">Validada</span>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Sistema de Gestión de Prácticas FCT © 2025 - Alberto Jiménez Hernández</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,290 @@
+/**
+ * Sistema de Gestión de Prácticas FCT
+ * Estilos - Versión Simplificada (Sin JavaScript)
+ * 
+ * PALETA DE COLORES:
+ * - Azul principal: #2563EB
+ * - Azul oscuro: #1D4ED8
+ * - Verde éxito: #10B981
+ * - Rojo error: #EF4444
+ * - Gris oscuro: #1F2937
+ * - Gris claro: #F3F4F6
+ * 
+ * @author Alberto Jiménez Hernández
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F3F4F6;
+    color: #1F2937;
+    line-height: 1.6;
+}
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.auth-card {
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-card.registro {
+    max-width: 450px;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.auth-logo {
+    width: 60px;
+    height: 60px;
+    background: #2563EB;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+}
+
+.auth-logo svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+.auth-title {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.auth-subtitle {
+    color: #6B7280;
+    font-size: 0.9rem;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #D1D5DB;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #2563EB;
+}
+
+.campos-rol {
+    padding: 15px;
+    background: #F9FAFB;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    border: 1px solid #E5E7EB;
+}
+
+.campos-rol .form-group:last-child {
+    margin-bottom: 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.btn-primary {
+    background: #2563EB;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #1D4ED8;
+}
+
+.btn-secondary {
+    background: #E5E7EB;
+    color: #1F2937;
+}
+
+.btn-secondary:hover {
+    background: #D1D5DB;
+}
+
+.auth-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.auth-link a {
+    color: #2563EB;
+    text-decoration: none;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+.alert {
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.alert-danger {
+    background: #FEE2E2;
+    color: #DC2626;
+    border: 1px solid #EF4444;
+}
+
+.alert-success {
+    background: #D1FAE5;
+    color: #059669;
+    border: 1px solid #10B981;
+}
+
+.alert ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.dashboard-container {
+    min-height: 100vh;
+}
+
+.navbar {
+    background: #2563EB;
+    color: white;
+    padding: 15px 20px;
+}
+
+.navbar-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-logout {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 8px 15px;
+    font-size: 0.85rem;
+}
+
+.btn-logout:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.dashboard-main {
+    padding: 30px 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.welcome-card {
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-card h1 {
+    margin-bottom: 10px;
+}
+
+.welcome-card p {
+    color: #6B7280;
+    margin-bottom: 15px;
+}
+
+.rol-badge {
+    display: inline-block;
+    padding: 5px 15px;
+    background: #DBEAFE;
+    color: #2563EB;
+    border-radius: 15px;
+    font-size: 0.85rem;
+}
+
+.pasos-info {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #DBEAFE;
+    border-radius: 4px;
+    color: #1D4ED8;
+    font-size: 0.9rem;
+}
+
+.mb-0 { margin-bottom: 0; }
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+
+@media (max-width: 600px) {
+    .navbar-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .auth-card {
+        padding: 20px;
+    }
+}
