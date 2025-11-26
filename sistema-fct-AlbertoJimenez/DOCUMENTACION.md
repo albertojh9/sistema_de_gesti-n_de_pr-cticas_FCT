@@ -1,4 +1,4 @@
-# 📚 Documentación del Proyecto
+# Documentación del Proyecto
 
 ## Sistema de Gestión de Prácticas FCT
 
@@ -8,7 +8,7 @@
 
 ---
 
-## 📋 Índice
+## Índice
 
 1. [Información General](#información-general)
 2. [Tecnologías](#tecnologías)
@@ -19,7 +19,7 @@
 
 ---
 
-## 📌 Información General
+## Información General
 
 **Autor:** Alberto Jiménez Hernández  
 **Versión:** 1.0 - Sprint 1  
@@ -28,28 +28,18 @@ Sistema web para gestionar las prácticas FCT de los estudiantes de ciclos forma
 
 ---
 
-## 💻 Tecnologías
+## Tecnologías
 
 - **Backend:** PHP 8.x
 - **Base de Datos:** MySQL / MariaDB
 - **Frontend:** HTML5, CSS3
 - **Arquitectura:** MVC
 
-**Nota:** Este sprint NO usa JavaScript.
-
 ---
 
-## 🚀 Instalación
+## Instalación
 
-### 1. Crear la Base de Datos
-
-```sql
-mysql -u root -p < src/sql/bbdd.sql
-mysql -u root -p < src/sql/datos_iniciales.sql
-mysql -u root -p < src/sql/datos_pruebas.sql
-```
-
-### 2. Configurar Conexión
+### 1. Configurar Conexión
 
 Editar `src/www/includes/config.php`:
 
@@ -60,13 +50,13 @@ define('DB_USER', 'tu_usuario');
 define('DB_PASS', 'tu_contraseña');
 ```
 
-### 3. Configurar Servidor Web
+### 2. Configurar Servidor Web
 
 Apuntar DocumentRoot a `src/www/`
 
 ---
 
-## ✅ Funcionalidades
+## Funcionalidades
 
 ### HU-01: Registro de Usuarios
 - Sistema de 2 pasos (sin JavaScript)
@@ -93,7 +83,7 @@ Apuntar DocumentRoot a `src/www/`
 
 ---
 
-## 🎨 Paleta de Colores
+## Paleta de Colores
 
 La paleta de colores está definida en dos lugares:
 
@@ -116,8 +106,8 @@ Abre este archivo en el navegador para ver la paleta de colores de forma visual 
 
 ---
 
-## 📞 Contacto
+## Contacto
 
 **Alberto Jiménez Hernández**  
 IES Castelar - Badajoz  
-2º DAW - Curso 2024-2025
+2º DAW - Curso 2025-2026
